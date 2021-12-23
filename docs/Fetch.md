@@ -12,21 +12,13 @@ Fetch 与古老的 XMLHttpRequest相比，比 XMLHttpRequest提供了更加强�
 
 ```JavaScript
 let url = `https://api.devio.org/uapi/test/test?requestPrams=aa`;
-
 fetch(url)
-
     .then(response => response.text()) // 将response中的data转成String
-
     .then(responseText => {
-
         console.log(responseText);
-
     })
-
     .catch(e => { //捕获异常
-
         console.log(e.toString());
-
     });
 ```
 
@@ -72,29 +64,17 @@ Promise fetch(input,init);
 
 ```JavaScript
 fetch(url, {
-
     body: JSON.stringify(data), // 数据类型要和 'Content-Type' header保持一致
-
     cache: 'no-cache', // default, no-cache, reload, force-cache 或者 only-if-cached
-
     credentials: 'same-origin', // omit、same-origin 或者 include
-
     headers: {
-
       'user-agent': 'Mozilla/4.0 MDN Example',
-
       'content-type': 'application/json'
-
     },
-
     method: 'POST', // GET, POST, PUT, DELETE 等.
-
     mode: 'cors', // no-cors, cors 或same-origin
-
     redirect: 'follow', // manual, follow 或 error
-
     referrer: 'no-referrer', // client 或no-referrer
-
 })
 
 .then(response => response.json()) // 将数据解析成JSON
@@ -108,30 +88,17 @@ fetch(url, {
 
 ```JavaScript
 let url = `https://api.devio.org/uapi/test/test?requestPrams=aa`;
-
 fetch(url)
-
     .then(response => {
-
         if (!response.ok) {
-
             return response.text();//将response中的data转成String
-
         }
-
         throw new Error('Network response was not ok.');
-
     })
-
     .then(responseText => {
-
          console.log(responseText);
-
     })
-
     .catch(e => {//捕获异常
-
         console.log(e.toString());
-
     });
 ```
